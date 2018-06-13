@@ -1,4 +1,4 @@
-import Function_identity from './utils/Function/identity';
+import Function_identity from '/utils/Function/identity';
 
 export default {
 	name: 'VueTextTemplate',
@@ -31,10 +31,10 @@ export default {
 			tag,
 			template
 				.split(/{\s*([^\s{}]+)\s*}/g)
-				.map((token, index) =>
-					(index % 2)
-						? $scopedSlots.default(token)
-						: token
+				.map((v, i) =>
+					(i % 2)
+						? $scopedSlots.default(v)
+						: v
 				),
 		);
 	},
