@@ -15,27 +15,27 @@ export default {
 		},
 	},
 
+	computed: {
+		splittedTemplate() {
+			return this.template.split(/{\s*([^\s{}]+)\s*}/g);
+		},
+	},
+
 	render(createElement) {
 		let {
 			$scopedSlots,
+			splittedTemplate,
 			tag,
-			template,
 		} = this;
-
 		$scopedSlots = {
 			default: Function_identity,
 			...$scopedSlots,
 		};
-
 		return createElement(
 			tag,
-			template
-				.split(/{\s*([^\s{}]+)\s*}/g)
-				.map((v, i) =>
-					(i % 2)
-						? $scopedSlots.default(v)
-						: v
-				),
+			splittedTemplate.map((v, i) =>
+				(i % 2) ? $scopedSlots.default(v) : v
+			),
 		);
 	},
 };
