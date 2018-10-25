@@ -1,6 +1,6 @@
 {
 	"name": "vuetexttemplate",
-	"version": "18.6.12",
+	"version": "18.10.25",
 	"description": "Replaces the tokens inside a text template with the scoped slots.",
 	"keywords": [
 		"component",
