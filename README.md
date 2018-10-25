@@ -1,6 +1,6 @@
 # VueTextTemplate
 
-Replaces tokens inside a text template with scoped slots.
+Replaces the tokens inside a text template with the scoped slots.
 
 ## dependencies
 
@@ -27,16 +27,16 @@ Vue.component(VueTextTemplate.name, VueTextTemplate);
 
 *or*
 
-Register the component in the scope of another instance.
+Register the component in the scope of another component.
 
 ```javascript
 import VueTextTemplate from 'vuetexttemplate';
 
 export default {
-  // ...
   components: {
     [VueTextTemplate.name]: VueTextTemplate,
   },
+  /*...*/
 };
 ```
 
@@ -57,9 +57,7 @@ If Vue is detected, the component will be registered automatically.
     <v-icon
       slot-scope="index"
       :color="choices[index].color"
-    >
-      {{ choices[index].icon }}
-    </v-icon>
+    >{{ choices[index].icon }}</v-icon>
   </vue-text-template>
 </template>
 <script>
