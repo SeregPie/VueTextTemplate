@@ -11,7 +11,7 @@ Replaces the tokens inside a text template with the scoped slots.
 ### npm
 
 ```shell
-npm install vuetexttemplate
+npm i vuetexttemplate
 ```
 
 ### ES module
@@ -54,17 +54,18 @@ If Vue is detected, the component will be registered automatically.
 ```vue
 <template>
   <vue-text-template :template="text">
-    <v-icon
-      slot-scope="index"
-      :color="choices[index].color"
-    >{{ choices[index].icon }}</v-icon>
+    <my-icon
+      v-slot="index"
+      :color="items[index].color"
+      :type="items[index].icon"
+    />
   </vue-text-template>
 </template>
 <script>
 export default {
   data: {
     text: 'Choose between { 0 }, { 1 } and { 2 }.',
-    choices: [
+    items: [
       {icon: 'train', color: 'red'},
       {icon: 'tram', color: 'green'},
       {icon: 'subway', color: 'blue'},
