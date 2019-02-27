@@ -32,7 +32,7 @@ export default {
   components: {
     [VueTextTemplate.name]: VueTextTemplate,
   },
-  /*...*/
+  // ...
 };
 ```
 
@@ -47,26 +47,24 @@ If Vue is detected, the component will be registered automatically.
 
 ## usage
 
-```vue
-<template>
-  <vue-text-template :template="text">
-    <my-icon
-      v-slot="index"
-      :color="items[index].color"
-      :type="items[index].icon"
-    />
-  </vue-text-template>
-</template>
-<script>
-export default {
-  data: {
-    text: 'Choose between { 0 }, { 1 } and { 2 }.',
-    items: [
-      {icon: 'train', color: 'red'},
-      {icon: 'tram', color: 'green'},
-      {icon: 'subway', color: 'blue'},
-    ],
-  },
-};
-</script>
+```html
+<vue-text-template :template="text">
+  <my-icon
+    v-slot="index"
+    :color="items[index].color"
+    :type="items[index].icon"
+  />
+</vue-text-template>
+```
+
+```javascript
+// ...
+data: {
+  text: 'Choose between { 0 }, { 1 } and { 2 }.',
+  items: [
+    {icon: 'train', color: 'red'},
+    {icon: 'tram', color: 'green'},
+    {icon: 'subway', color: 'blue'},
+  ],
+},
 ```
