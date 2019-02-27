@@ -2,10 +2,6 @@
 
 Replaces the tokens inside a text template with the scoped slots.
 
-## dependencies
-
-- [Vue](https://github.com/vuejs/vue)
-
 ## setup
 
 ### npm
