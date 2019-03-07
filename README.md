@@ -2,6 +2,10 @@
 
 Replaces the tokens inside a text template with the scoped slots.
 
+## dependencies
+
+- [renderTemplate](https://github.com/SeregPie/renderTemplate)
+
 ## setup
 
 ### npm
@@ -40,6 +44,7 @@ export default {
 
 ```html
 <script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/@seregpie/render-template"></script>
 <script src="https://unpkg.com/vuetexttemplate"></script>
 ```
 
@@ -60,11 +65,29 @@ If Vue is detected, the component will be registered automatically.
 ```javascript
 // ...
 data: {
-  text: 'Choose between { 0 }, { 1 } and { 2 }.',
+  text: 'Choose between {{ 0 }}, {{ 1 }} and {{ 2 }}.',
   items: [
     {icon: 'train', color: 'red'},
     {icon: 'tram', color: 'green'},
     {icon: 'subway', color: 'blue'},
   ],
 },
+```
+
+## properties
+
+| property | type | default |
+| ---: | :--- | :--- |
+| `regex` | | * |
+| `tag` | `String` | `'div'` |
+| `template` | `String` | `''` |
+
+---
+
+```javascript
+import renderTemplate from '@seregpie/render-template';
+
+let regex = function() {
+  return renderTemplate.regex;
+};
 ```
